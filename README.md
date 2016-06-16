@@ -7,6 +7,7 @@
 A Ruby client for IDCF Cloud ILB service.
 
 ## Installation
+Note: requires Ruby 2.1.0 or higher.
 
 Add this line to your application's Gemfile:
 
