@@ -7,6 +7,7 @@
 A Ruby client for IDCF Cloud ILB service.
 
 ## Installation
+Note: requires Ruby 2.1.0 or higher.
 
 Add this line to your application's Gemfile:
 
@@ -25,8 +26,8 @@ Or install it yourself as:
 ## Usage
 ### Basic usage
 #### Client
-You can create a instance of client by specifying API_KEY and SECRET_KEY.
-You can get API_KEY and SECRET_KEY in [IDCF Cloud](https://console.idcfcloud.com/user/apikey).
+You can create a instance of client by specifying API_KEY and SECRET_KEY.  
+You can get API_KEY and SECRET_KEY in [IDCF Cloud](https://console.idcfcloud.com/user/apikey).  
 You can also specify HOST. If you do not specify HOST, your client send request to "ilb.jp-east.idcfcloud.com".
 
 ```ruby
