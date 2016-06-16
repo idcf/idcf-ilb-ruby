@@ -25,8 +25,9 @@ Or install it yourself as:
 ## Usage
 ### Basic usage
 #### Client
-You can create a instance of client by specifying API_KEY and SECRET_KEY.  
+You can create a instance of client by specifying API_KEY and SECRET_KEY.
 You can get API_KEY and SECRET_KEY in [IDCF Cloud](https://console.idcfcloud.com/user/apikey).
+You can also specify HOST. If you do not specify HOST, your client send request to "ilb.jp-east.idcfcloud.com".
 
 ```ruby
 require "idcf/ilb"
@@ -34,7 +35,8 @@ require "idcf/ilb"
 client =
   Idcf::Ilb::Client.new(
     api_key: ENV["IDCF_API_KEY"],
-    secret_key: ENV["IDCF_SECRET_KEY"]
+    secret_key: ENV["IDCF_SECRET_KEY"],
+    host: ENV["IDCF_ILB_HOST"]
   )
 
 # Call GET request directly
