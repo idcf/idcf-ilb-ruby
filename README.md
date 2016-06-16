@@ -4,7 +4,7 @@
 [![Code Climate](https://codeclimate.com/github/idcf/idcf-ilb-ruby/badges/gpa.svg)](https://codeclimate.com/github/idcf/idcf-ilb-ruby)
 [![Test Coverage](https://codeclimate.com/github/idcf/idcf-ilb-ruby/badges/coverage.svg)](https://codeclimate.com/github/idcf/idcf-ilb-ruby/coverage)
 
-A Ruby client for [IDCF Cloud ILB service](https://console.jp-east.idcfcloud.com/ilb/).
+A Ruby client for IDCF Cloud ILB service.
 
 ## Installation
 
