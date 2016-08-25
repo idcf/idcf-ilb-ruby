@@ -5,10 +5,13 @@ module Idcf
       class Job < Base
         self.valid_attributes = {
           id:                  { type: String },
-          resource:            { type: String, list: :optional },
+          account_id:          { type: String },
+          job_status:          { type: String },
+          result_code:         { type: Integer, list: :optional },
+          resource:            { type: String,  list: :optional },
           resource_id:         { type: String },
           path:                { type: String },
-          method:              { type: String, list: :required },
+          method:              { type: String, list: :optional },
           created_at:          { type: String },
           updated_at:          { type: String }
         }

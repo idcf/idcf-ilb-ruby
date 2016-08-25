@@ -20,6 +20,8 @@ module Idcf
         # @return [Array<Resources::Virtualmachine>] An array of virtualmachine objects
         def virtualmachines(headers = {})
           list_virtualmachines(headers).resources.map do |virtualmachine|
+            virtualmachine["host_id"] = "" if virtualmachine["host_id"].nil?
+            virtualmachine["host_name"] = "" if virtualmachine["host_name"].nil?
             Resources::Virtualmachine.new(self, virtualmachine)
           end
         end

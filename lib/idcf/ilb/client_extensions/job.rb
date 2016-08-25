@@ -47,11 +47,9 @@ module Idcf
           end
 
           if flag == true
-            if specify_res_id == true
-              res_id = @res.body["resource_id"]
-              callback_and_args << res_id
-            end
-            callback_and_args.empty? ? true : __send__(*callback_and_args, headers)
+            callback_and_args << "get_job" << @res.body["id"] if callback_and_args.empty?
+            callback_and_args << @res.body["resource_id"] if callback_and_args.count == 1
+            __send__(*callback_and_args, headers)
           else
             raise(
               ApiError,
