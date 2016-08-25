@@ -17,6 +17,7 @@ module Idcf
         # @return [Array<Resources::Network>] An array of network objects
         def networks(headers = {})
           list_networks(headers).resources.map do |network|
+            network["account_id"] = "" if network["account_id"].nil?
             Resources::Network.new(self, network)
           end
         end

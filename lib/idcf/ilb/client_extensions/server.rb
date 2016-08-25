@@ -15,7 +15,7 @@ module Idcf
         def add_server(lb_id, config_id, data, headers = {})
           Validators::Server.validate_attributes!(data, :add)
           res = post!("loadbalancers/#{lb_id}/configs/#{config_id}/servers", data, headers)
-          check_job(res.body["job_id"], headers, ["list_servers", lb_id, config_id], false)
+          check_job(res.body["job_id"], headers, ["list_servers", lb_id, config_id])
         end
 
         # Get list of existing [loadbalancer's config servers]
@@ -38,7 +38,7 @@ module Idcf
         # @return [Array<Hash>] An array of [loadbalancer's config server] hash
         def delete_server(lb_id, config_id, id, headers = {})
           res = delete!("loadbalancers/#{lb_id}/configs/#{config_id}/servers/#{id}", {}, headers)
-          check_job(res.body["job_id"], headers, ["list_servers", lb_id, config_id], false)
+          check_job(res.body["job_id"], headers, ["list_servers", lb_id, config_id])
         end
       end
     end

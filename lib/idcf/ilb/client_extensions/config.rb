@@ -23,7 +23,7 @@ module Idcf
         def create_config(lb_id, attributes, headers = {})
           Validators::Config.validate_attributes!(attributes, :create)
           res = post!("loadbalancers/#{lb_id}/configs", attributes, headers)
-          check_job(res.body["job_id"], headers, ["get_config", lb_id])
+          check_job(res.body["job_id"], headers, ["list_configs", lb_id])
         end
 
         # Get list of existing configs
@@ -67,7 +67,7 @@ module Idcf
         def patch_config(lb_id, id, attributes, headers = {})
           Validators::Config.validate_attributes!(attributes, :patch)
           res = patch!("loadbalancers/#{lb_id}/configs/#{id}", attributes, headers)
-          check_job(res.body["job_id"], headers, ["get_config", lb_id])
+          check_job(res.body["job_id"], headers, ["get_config", lb_id, id])
         end
 
         # Delete a config
