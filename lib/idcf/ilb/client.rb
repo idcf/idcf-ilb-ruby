@@ -1,3 +1,4 @@
+require "active_support"
 require "faraday"
 require "faraday_middleware"
 
