@@ -5,6 +5,7 @@ module Idcf
       class Sslpolicy < Base
         self.valid_attributes = {
           id:            { type: String },
+          account_id:    { type: String },
           name:          { type: String, create: :required },
           algorithms:    { type: Array, create: :required },
           state:         { type: String },
