@@ -20,7 +20,7 @@ module Idcf
       include ClientExtensions::Log
       include ClientExtensions::Traffic
 
-      attr_reader :api_key, :secret_key, :host, :endpoint
+      attr_reader :api_key, :secret_key, :host, :endpoint, :ssl
 
       # The constructor of Ilb::Client uses keyword arguments.
       #
@@ -30,6 +30,7 @@ module Idcf
                      secret_key:,
                      host: "ilb.jp-east.idcfcloud.com",
                      endpoint: "/api/v1",
+                     ssl: true,
                      verify_ssl: true
                     )
 
@@ -37,6 +38,7 @@ module Idcf
         @secret_key = secret_key
         @host       = host
         @endpoint   = endpoint
+        @ssl = ssl
         @verify_ssl = verify_ssl
       end
 
@@ -169,12 +171,16 @@ module Idcf
         response
       end
 
+      def protocol
+        ssl ? "https" : "http"
+      end
+
       def ssl_options
         { verify: @verify_ssl }
       end
 
       def url_prefix
-        "https://#{host}"
+        "#{protocol}://#{host}"
       end
     end
   end
