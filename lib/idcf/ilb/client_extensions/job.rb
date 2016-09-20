@@ -46,6 +46,7 @@ module Idcf
             end
           end
 
+          return if "DELETE" == @res.body["method"]
           if flag == true
             if specify_res_id == true
               res_id = @res.body["resource_id"]
