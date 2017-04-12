@@ -89,8 +89,17 @@ module Idcf
           path,
           api_key,
           expires,
-          ""
+          query_for_get
         ].join("\n")
+      end
+
+      def query_for_get
+        return convert_params_to_query if method == :get && !parameters.empty?
+        ""
+      end
+
+      def convert_params_to_query
+        parameters.map { |k, v| "#{k}=#{CGI.escape(v.to_s).gsub(/\+|\ /, '%20')}" }.sort.join("&")
       end
     end
   end
