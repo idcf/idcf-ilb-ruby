@@ -4,11 +4,6 @@ SimpleCov.start do
   add_filter "spec"
 end
 
-if ENV["CI"]
-  require "codeclimate-test-reporter"
-  CodeClimate::TestReporter.start
-end
-
 dotenv_path = File.expand_path("../../.env", __FILE__)
 if File.exist?(dotenv_path)
   require "dotenv"
