@@ -48,6 +48,8 @@ module Idcf
               else
                 false
               end
+            when "boolean"
+              value.is_a?(FalseClass) || value.is_a?(TrueClass)
             else
               value.is_a?(valid_type)
             end

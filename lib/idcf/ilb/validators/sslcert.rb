@@ -16,7 +16,8 @@ module Idcf
           remaining_days:      { type: Integer },
           expired_at:          { type: String },
           created_at:    { type: String },
-          updated_at:    { type: String }
+          updated_at:    { type: String },
+          ats_flag:      { type: "boolean" }
         }
       end
     end
