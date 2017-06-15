@@ -14,8 +14,8 @@ module Idcf
           method:              { type: String, list: :optional },
           created_at:          { type: String },
           updated_at:          { type: String },
-          limit:          { type: Integer, list: :optional },
-          offset:          { type: Integer, list: :optional }
+          limit:               { type: Integer, list: :optional },
+          offset:              { type: Integer, list: :optional }
         }
       end
     end
