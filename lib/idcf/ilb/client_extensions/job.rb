@@ -8,6 +8,8 @@ module Idcf
         # @param attributes [Hash] request attributes
         # @option attributes [String] :resource name of resource (optional)
         # @option attributes [String] :method name of http method (optional)
+        # @option attributes [Integer] :limit value of limit (optional)
+        # @option attributes [Integer] :offset value of offset (optional)
         # @param headers [Hash] HTTP request headers
         # @return [Response] HTTP response object
         def list_jobs(attributes = {}, headers = {})
@@ -30,22 +32,7 @@ module Idcf
         # @param id [String] ID of target job
         # @return [Response] HTTP response object
         def check_job(id, headers = {}, callback_and_args = [], specify_res_id = true)
-          flag = false
-          1.upto(20) do |n|
-            @res = get_job(id, headers)
-            if @res.body["job_status"] == "Success"
-              flag = true
-              break
-            elsif @res.body["job_status"] == "Failed"
-              raise(
-                ApiError,
-                "API Failed."
-              )
-            else
-              sleep 2 * n
-            end
-          end
-
+          flag = success?(id, headers)
           return if "DELETE" == @res.body["method"]
           if flag == true
             if specify_res_id == true
@@ -69,6 +56,25 @@ module Idcf
           list_jobs(headers).resources.map do |job|
             Resources::Job.new(self, job)
           end
+        end
+
+        private
+
+        def success?(id, headers)
+          1.upto(20) do |n|
+            @res = get_job(id, headers)
+            if @res.body["job_status"] == "Success"
+              return true
+            elsif @res.body["job_status"] == "Failed"
+              raise(
+                ApiError,
+                "API Failed."
+              )
+            else
+              sleep 2 * n
+            end
+          end
+          false
         end
       end
     end

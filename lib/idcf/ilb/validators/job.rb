@@ -13,7 +13,9 @@ module Idcf
           path:                { type: String },
           method:              { type: String, list: :optional },
           created_at:          { type: String },
-          updated_at:          { type: String }
+          updated_at:          { type: String },
+          limit:          { type: Integer, list: :optional },
+          offset:          { type: Integer, list: :optional }
         }
       end
     end
