@@ -5,8 +5,7 @@ require 'idcf/ilb/version'
 Gem::Specification.new do |spec|
   spec.name          = "idcf-ilb"
   spec.version       = Idcf::Ilb::VERSION
-  spec.authors       = ["Akito Ueno"]
-  spec.email         = ["aueno@idcf.jp"]
+  spec.authors       = ["IDC Frontier Inc."]
 
   spec.summary       = %q{A Ruby client for IDCF Cloud ILB Service.}
   spec.homepage      = "http://www.idcf.jp/cloud/"
