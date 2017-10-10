@@ -20,7 +20,7 @@ module Idcf
         # @param headers [Hash] HTTP request headers
         # @return [Array<Resources::Log>] An array of log objects
         def logs(headers = {})
-          list_logs(headers).resources.map do |log|
+          list_logs({}, headers).resources.map do |log|
             Resources::Log.new(self, log)
           end
         end
