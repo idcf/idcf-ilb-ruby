@@ -69,7 +69,7 @@ module Idcf
         # @param headers [Hash] HTTP request headers
         # @return [Array<Resources::Sslcert>] An array of sslcert objects
         def sslcerts(headers = {})
-          list_sslcerts(headers).resources.map do |sslcert|
+          list_sslcerts({}, headers).resources.map do |sslcert|
             Resources::Sslcert.new(self, sslcert)
           end
         end

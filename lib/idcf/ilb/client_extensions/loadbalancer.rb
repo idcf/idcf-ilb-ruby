@@ -69,7 +69,7 @@ module Idcf
         # @param headers [Hash] HTTP request headers
         # @return [Array<Resources::Loadbalancer>] An array of loadbalancer objects
         def loadbalancers(headers = {})
-          list_loadbalancers(headers).resources.map do |loadbalancer|
+          list_loadbalancers({}, headers).resources.map do |loadbalancer|
             Resources::Loadbalancer.new(self, loadbalancer)
           end
         end

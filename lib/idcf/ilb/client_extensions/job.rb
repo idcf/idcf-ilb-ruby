@@ -53,7 +53,7 @@ module Idcf
         # @param headers [Hash] HTTP request headers
         # @return [Array<Resources::Job>] An array of job objects
         def jobs(headers = {})
-          list_jobs(headers).resources.map do |job|
+          list_jobs({}, headers).resources.map do |job|
             Resources::Job.new(self, job)
           end
         end

@@ -19,7 +19,7 @@ module Idcf
         # @param headers [Hash] HTTP request headers
         # @return [Array<Resources::Virtualmachine>] An array of virtualmachine objects
         def virtualmachines(headers = {})
-          list_virtualmachines(headers).resources.map do |virtualmachine|
+          list_virtualmachines({}, headers).resources.map do |virtualmachine|
             Resources::Virtualmachine.new(self, virtualmachine)
           end
         end
