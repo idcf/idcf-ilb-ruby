@@ -18,7 +18,8 @@ module Idcf
           zone_name:           { type: String },
           fwgroup_id:          { type: String, create: :optional, update: :optional },
           created_at:          { type: String },
-          updated_at:          { type: String }
+          updated_at:          { type: String },
+          redirects:           { type: Array, create: :optional, update: :optional }
         }
       end
     end
