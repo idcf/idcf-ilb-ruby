@@ -16,7 +16,7 @@ module Idcf
           stickiness_policy:   { type: String, create: :optional, patch: :optional },
           algorithm:           { type: String, create: :required, patch: :optional },
           healthcheck:         { type: Hash, create: :required, patch: :optional },
-          l7routes:            { type: Array, create: :optional },
+          l7routes:            { type: Array, create: :optional, patch: :optional },
           backupserver:        { type: Hash, create: :optional, patch: :optional },
           state:               { type: String },
           created_at:    { type: String },
