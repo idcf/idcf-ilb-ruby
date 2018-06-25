@@ -9,6 +9,7 @@ module Idcf
       include ClientExtensions::Loadbalancer
       include ClientExtensions::Config
       include ClientExtensions::Server
+      include ClientExtensions::L7route
       include ClientExtensions::Job
       include ClientExtensions::Sslcert
       include ClientExtensions::Sslalgorithm
