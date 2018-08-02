@@ -70,6 +70,18 @@ module Idcf
           res = patch!("loadbalancers/#{lb_id}/configs/#{config_id}/l7routes/#{id}", data, headers)
           check_job(res.body["job_id"], headers, ["get_l7route", lb_id, config_id, id], false)
         end
+
+        # Get an array of existing l7routes objects.
+        #
+        # @param lb_id [String] ID of loadbalancer
+        # @param config_id [String] ID of loadbalancer's config
+        # @param headers [Hash] HTTP request headers
+        # @return [Array<Resources::L7route>] An array of l7route objects
+        def l7routes(lb_id, config_id, headers = {})
+          list_l7routes(lb_id, config_id, headers).resources.map do |l7route|
+            Resources::L7route.new(self, l7route)
+          end
+        end
       end
     end
   end

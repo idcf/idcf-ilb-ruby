@@ -38,6 +38,14 @@ describe Idcf::Ilb::Client do
       end
     end
 
+    describe "l7routes" do
+      describe "invalid" do
+        it "no parameter" do
+          expect { client.l7routes }.to raise_error(ArgumentError)
+        end
+      end
+    end
+
     describe "delete_l7route" do
       describe "invalid" do
         it "no parameter" do
