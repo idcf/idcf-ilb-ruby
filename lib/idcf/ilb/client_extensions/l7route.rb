@@ -8,7 +8,6 @@ module Idcf
         # @param lb_id [String] ID of loadbalancer
         # @param config_id [String] ID of loadbalancer's config
         # @param data [Hash] add l7route hash
-        # @option data [String] :name  (required)
         # @option data [Hash] :servers  (required)
         # @option data [String] :criterion  (required)
         # @option data [String] :pattern  (required)
@@ -59,7 +58,6 @@ module Idcf
         # @param config_id [String] ID of loadbalancer's config
         # @param id [String] ID of loadbalancer's config l7route
         # @param data [Hash] add l7route hash
-        # @option data [String] :name  (required)
         # @option data [Hash] :servers  (required)
         # @option data [String] :criterion  (required)
         # @option data [String] :pattern  (required)

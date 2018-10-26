@@ -11,7 +11,6 @@ describe Idcf::Ilb::Client do
   let(:l7route_id) { "12356789-1234-1234-12345678901234567" }
   let(:data) do
     {
-      name: "hoge",
       servers: [
         { ipaddress: "123.123.123.123", port: 80 },
         { ipaddress: "456.456.456.456", port: 80 }
@@ -60,14 +59,6 @@ describe Idcf::Ilb::Client do
           expect { client.create_l7route }.to raise_error(ArgumentError)
         end
 
-        it "invalid name" do
-          data[:name] = 123
-          message = "`name` is required to be a String"
-          expect do
-            client.create_l7route(lb_id, config_id, data)
-          end.to raise_error(Idcf::Ilb::InvalidAttributeType, message)
-        end
-
         it "invalid servers" do
           data[:servers] = 123
           message = "`servers` is required to be a Array"
@@ -98,14 +89,6 @@ describe Idcf::Ilb::Client do
       describe "invalid" do
         it "no parameter" do
           expect { client.patch_l7route }.to raise_error(ArgumentError)
-        end
-
-        it "invalid name" do
-          data[:name] = 123
-          message = "`name` is required to be a String"
-          expect do
-            client.patch_l7route(lb_id, config_id, l7route_id, data)
-          end.to raise_error(Idcf::Ilb::InvalidAttributeType, message)
         end
 
         it "invalid servers" do
