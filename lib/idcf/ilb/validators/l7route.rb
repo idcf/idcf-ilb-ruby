@@ -6,7 +6,6 @@ module Idcf
         self.valid_attributes = {
           id:         { type: String },
           servers:    { type: Array,  create: :required, patch: :optional },
-          criterion:  { type: String, create: :required, patch: :optional },
           pattern:    { type: String, create: :required, patch: :optional },
           created_at: { type: String },
           updated_at: { type: String }

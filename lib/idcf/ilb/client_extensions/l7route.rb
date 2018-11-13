@@ -9,7 +9,6 @@ module Idcf
         # @param config_id [String] ID of loadbalancer's config
         # @param data [Hash] add l7route hash
         # @option data [Hash] :servers  (required)
-        # @option data [String] :criterion  (required)
         # @option data [String] :pattern  (required)
         # @param headers [Hash] HTTP request headers
         # @return [Array<Hash>] An array of [loadbalancer's config server] hash
@@ -59,7 +58,6 @@ module Idcf
         # @param id [String] ID of loadbalancer's config l7route
         # @param data [Hash] add l7route hash
         # @option data [Hash] :servers  (required)
-        # @option data [String] :criterion  (required)
         # @option data [String] :pattern  (required)
         # @param headers [Hash] HTTP request headers
         # @return [Array<Hash>] An array of [loadbalancer's config server] hash

@@ -15,7 +15,6 @@ describe Idcf::Ilb::Client do
         { ipaddress: "123.123.123.123", port: 80 },
         { ipaddress: "456.456.456.456", port: 80 }
       ],
-      criterion: "path_beg",
       pattern: "/images/"
     }
   end
@@ -67,14 +66,6 @@ describe Idcf::Ilb::Client do
           end.to raise_error(Idcf::Ilb::InvalidAttributeType, message)
         end
 
-        it "invalid criterion" do
-          data[:criterion] = 123
-          message = "`criterion` is required to be a String"
-          expect do
-            client.create_l7route(lb_id, config_id, data)
-          end.to raise_error(Idcf::Ilb::InvalidAttributeType, message)
-        end
-
         it "invalid pattern" do
           data[:pattern] = 123
           message = "`pattern` is required to be a String"
@@ -94,14 +85,6 @@ describe Idcf::Ilb::Client do
         it "invalid servers" do
           data[:servers] = 123
           message = "`servers` is required to be a Array"
-          expect do
-            client.patch_l7route(lb_id, config_id, l7route_id, data)
-          end.to raise_error(Idcf::Ilb::InvalidAttributeType, message)
-        end
-
-        it "invalid criterion" do
-          data[:criterion] = 123
-          message = "`criterion` is required to be a String"
           expect do
             client.patch_l7route(lb_id, config_id, l7route_id, data)
           end.to raise_error(Idcf::Ilb::InvalidAttributeType, message)
