@@ -12,6 +12,7 @@ end
 require "idcf/ilb/client_extensions/loadbalancer"
 require "idcf/ilb/client_extensions/config"
 require "idcf/ilb/client_extensions/server"
+require "idcf/ilb/client_extensions/l7route"
 require "idcf/ilb/client_extensions/job"
 require "idcf/ilb/client_extensions/sslcert"
 require "idcf/ilb/client_extensions/sslalgorithm"
