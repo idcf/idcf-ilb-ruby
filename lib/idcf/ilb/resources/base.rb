@@ -49,7 +49,6 @@ module Idcf
         private
 
         def attributes=(attributes)
-          self.class.validator_class.validate_attributes!(attributes)
           attributes.each do |name, value|
             instance_variable_set(:"@#{name}", value)
           end
