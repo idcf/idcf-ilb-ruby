@@ -13,6 +13,7 @@ module Idcf
           configs:                     { type: Array, create: :required, update: :required },
           mackerel:                    { type: Hash, create: :optional, update: :optional },
           public_ipaddress_assignment: { type: TrueClass, create: :optional, update: :optional },
+          auto_scale_planning:         { type: Hash, create: :optional, update: :optional },
           fqdn:                        { type: String },
           state:                       { type: String },
           zone_id:                     { type: String },

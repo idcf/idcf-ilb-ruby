@@ -9,6 +9,7 @@ module Idcf
         # @option attributes [String] :name unique name of loadbalancer (required)
         # @option attributes [String] :network_id network_id of active network (required)
         # @option attributes [Object(true)] :public_ipaddress_assignment (optional)
+        # @option attributes [Hash] :auto_scale_planning (optional)
         # @option attributes [Array] :configs configs of loadbalancer (required)
         # @option attributes [Hash] :mackerel mackerel (optional)
         # @option attributes [String] :fwgroup_id (optional)
@@ -28,6 +29,7 @@ module Idcf
         # @option attributes [String] :private_key of loadbalancer (required)
         # @option attributes [String] :certificate_chain of loadbalancer (optional)
         # @option attributes [Object(true)] :public_ipaddress_assignment (optional)
+        # @option attributes [Hash] :auto_scale_planning (optional)
         # @param headers [Hash] HTTP request headers
         # @return [Response] HTTP response object
         def update_loadbalancer(id, attributes, headers = {})
